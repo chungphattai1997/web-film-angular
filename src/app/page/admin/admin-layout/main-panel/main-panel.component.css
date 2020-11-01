@@ -1,0 +1,19 @@
+.header {
+    background: #cccccc;
+    padding: 15px;
+}
+
+.header .title a {
+    color: #3C4858;
+}
+
+.btn-logout {
+    transition: 0.3s all;
+    color: #3C4858;
+    font-weight: bold;
+}
+
+.btn-logout:hover {
+    color: #f44336;
+    cursor: pointer;
+}

@@ -1,0 +1,62 @@
+<!-- <div>
+  <form #formSignIn="ngForm" (ngSubmit)="signIn(formSignIn.value)">
+    <div class="main-login-form">
+      <div class="login-group">
+        <div class="form-group">
+          <input ngModel #Username type="text" class="form-control" name="username" placeholder="username">
+        </div>
+        <div class="form-group">
+          <input ngModel #Password type="password" class="form-control" name="password" placeholder="password">
+        </div>
+      </div>
+      <button class="btn btn-success" type="submit">Sign in</button>
+    </div>
+  </form>
+</div> -->
+
+<!-- 
+<div class="content">
+  <div class="signup-form">
+    <form class="form-horizontal">
+      <div class="col-xs-8 col-xs-offset-4">
+        <h2>Sign In</h2>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-xs-4">Username</label>
+        <div class="col-xs-8">
+          <input type="text" class="form-control" name="username" required="required">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-xs-4">Password</label>
+        <div class="col-xs-8">
+          <input type="password" class="form-control" name="password" required="required">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-8 col-xs-offset-4">
+          <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        </div>
+      </div>
+    </form>
+    <div class="text-center">Already have an account? <a routerLink="/login/sign-up">Sign up here</a></div>
+  </div>
+</div> -->
+
+<div class="my-form">
+    <form #formSignIn="ngForm" (ngSubmit)="signIn(formSignIn.value)">
+        <h2>Sign In</h2>
+        <div class="form-group">
+            <label>Username</label>
+            <input ngModel #Username type="text" class="form-control" name="username">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input ngModel #Password type="password" class="form-control" name="password">
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+    </form>
+    <div class="text-center footer">Don't have an account? <a routerLink="/login/sign-up">Create one</a></div>
+</div>

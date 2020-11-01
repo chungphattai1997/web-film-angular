@@ -1,0 +1,18 @@
+<div class="header d-flex justify-content-between">
+    <div class="title pl-5">
+        <a routerLink="/home" class="navbar-brand">
+            <div class="brand-text">
+                <span>Film</span>
+                <strong>Management</strong>
+            </div>
+        </a>
+    </div>
+    <div>
+        <span (click)="logOut()" class="nav-link btn-logout">Đăng xuất</span>
+    </div>
+
+</div>
+
+<div class="mx-3">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,21 @@
+<div id="myCarousel">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let phim of dsPhim; let i = index">
+            <div class="">
+                <img src={{phim.HinhAnh}} />
+                <button type="button" class="btn play-trailer" data-toggle="modal" data-target="#modalTrailer">
+          <i class="fa fa-play-circle"></i>
+        </button>
+            </div>
+        </ng-template>
+    </owl-carousel-o>
+</div>
+
+<!-- Modal Play Movie Trailer-->
+<div id="modalTrailer" class="modal fade modalTrailer" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <iframe width="100%" height="526" class="embed-responsive-item" src="https://www.youtube.com/embed/6zQe-K8Ywq4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

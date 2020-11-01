@@ -1,0 +1,1 @@
+Please type command "npm install" before running application

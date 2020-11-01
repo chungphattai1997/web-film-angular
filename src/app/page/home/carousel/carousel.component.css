@@ -1,0 +1,24 @@
+#myCarousel {
+    position: relative;
+    margin-top: 60px;
+}
+
+#myCarousel:hover .play-trailer {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.play-trailer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, .8);
+    font-size: 500%;
+    transition: .5s all;
+    opacity: 0;
+}
+
+#trailerModel {
+    text-align: center;
+}

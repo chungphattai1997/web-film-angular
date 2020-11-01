@@ -1,0 +1,89 @@
+<div class="wrapper p-3">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="title">
+                <div class="box-header d-flex align-items-center justify-content-between m-1 mb-2">
+                    <h5 class="box-title ">
+                        <i class="fas fa-plus mr-2"></i> Thêm phim
+                    </h5>
+                </div>
+            </div>
+            <div class="content">
+                <form #addFilmForm="ngForm" (ngSubmit)="addFilm(addFilmForm.value)">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- <div class="form-group">
+                                <label for="">Mã Phim <span class="text-danger">*</span></label>
+                                <input name="id" ngModel required #idFilm='ngModel' type="number" class="form-control">
+                                <div *ngIf="idFilm.errors && (idFilm.touched || idFilm.dirty)">
+                                    <div class="alert alert-danger font-weight-bold" *ngIf="idFilm.errors.required ">
+                                        Vui lòng nhập mã phim
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+                                <label for="">Tên Phim <span class="text-danger">*</span></label>
+                                <input name="title" ngModel required #titleFilm='ngModel' type="text" class="form-control" value="">
+                                <div *ngIf="titleFilm.errors && (titleFilm.touched || titleFilm.dirty)">
+                                    <div class="alert alert-danger font-weight-bold" *ngIf="titleFilm.errors.required ">
+                                        Vui lòng nhập tên phim
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Loại phim <span class="text-danger">*</span></label>
+                                <select name="idCategory" ngModel #categoryFilm='ngModel' class="form-control">
+                  <option *ngFor="let item of listCategory; let i = index" value={{item.id}}>{{item.title}}</option>
+                </select>
+                                <div *ngIf="categoryFilm.errors && (categoryFilm.touched || categoryFilm.dirty)">
+                                    <div class="alert alert-danger font-weight-bold" *ngIf="categoryFilm.errors.required ">
+                                        Vui lòng chọn loại phim
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="">Mô Tả</label>
+                                <textarea name="detail" ngModel class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Ngày Khởi Chiếu <span class="text-danger">*</span></label>
+                                <input name="dateOpening" ngModel required #dateOpeningFilm='ngModel' type="date" class="form-control">
+                                <div *ngIf="dateOpeningFilm.errors && (dateOpeningFilm.touched || dateOpeningFilm.dirty)">
+                                    <div class="alert alert-danger font-weight-bold" *ngIf="dateOpeningFilm.errors.required ">
+                                        Vui lòng chọn ngày khởi chiếu
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Đánh Giá</label>
+                                <input name="rate" ngModel type="number" class="form-control">
+                            </div>
+                            <div class="form-group">
+
+                                <div class="form-group">
+                                    <label for="">Hình Ảnh</label>
+                                    <input type="file" (change)="onSelectedFile($event)" #files ngModel name="image" accept="image/*" class="form-control-file mt-2">
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="">Trailer</label>
+                                <input name="trailer" ngModel type="url" name="trailer" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <button [disabled]="addFilmForm.invalid" type="submit" class="btn btn-success mr-2" title="Thêm Phim"><i
+              class="fa fa-plus mr-1"></i>
+            Thêm</button>
+                    <button class="btn btn-danger" title="Hủy" (click)="onCancel()">
+            <i class="fa fa-trash mr-1"></i>Hủy
+          </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

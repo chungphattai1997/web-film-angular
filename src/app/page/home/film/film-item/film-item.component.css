@@ -1,0 +1,82 @@
+img {
+    border-radius: 4px;
+}
+
+p {
+    font-weight: bold;
+}
+
+span {
+    font-size: 13px;
+    color: #4a4a4a;
+}
+
+.info {
+    transition: .3s all;
+}
+
+.film-item {
+    padding: 0 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+    width: 25%;
+}
+
+.film-item:hover .show-hover {
+    opacity: 1;
+}
+
+.film-item:hover .info {
+    opacity: 0;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail .show-hover {
+    background: linear-gradient(to top, #000, transparent 100%);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    color: red;
+    position: absolute;
+    top: 0;
+    transition: .3s all;
+}
+
+.thumbnail .play-trailer {
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.body {
+    position: relative;
+}
+
+.body .show-hover {
+    opacity: 0;
+    transition: .3s all;
+    background: #fb4226;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.body .buy-ticket {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    color: #fff;
+}

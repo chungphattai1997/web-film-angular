@@ -1,0 +1,19 @@
+<div class="container" id="filmList">
+    <div class="row">
+        <div class="col-12 mt-5 title text-center">
+            <a *ngFor="let item of listCategory" class="mx-3" (click)="viewStatus=!viewStatus" [ngClass]="{'active': viewStatus}">{{item.title}}</a>
+            <!-- <a class="mx-3" (click)="viewStatus=true" [ngClass]="{'active': viewStatus}">Đang Chiếu</a>
+      <a class="mx-3" (click)="viewStatus=false" [ngClass]="{'active': !viewStatus}">Sắp Chiếu</a> -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-3">
+            <app-film-item></app-film-item>
+            <app-film-item></app-film-item>
+            <app-film-item></app-film-item>
+            <app-film-item></app-film-item>
+            <app-film-item></app-film-item>
+        </div>
+    </div>
+
+</div>

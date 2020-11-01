@@ -1,0 +1,84 @@
+<div class="wrapper p-3">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="title">
+        <div class="box-header d-flex align-items-center justify-content-between m-1 mb-2">
+          <h5 class="box-title ">
+            <i class="fa fa-list-alt mr-2"></i> Danh sách loại phim
+          </h5>
+          <button type="button" (click)=btnAdd() class="btn btn-success mb-2" data-toggle="modal" data-target="#myModal">
+            <i class="fa fa-plus"></i>
+            Thêm</button>
+        </div>
+      </div>
+      <div class="content">
+        <table class="table table-responsive-md table-striped">
+          <thead>
+            <tr class="text-uppercase">
+              <th>Mã loại</th>
+              <th>Tiêu đề</th>
+              <th>Danh sách các phim</th>
+              <th class="text-right">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of listCategory; let i = index">
+              <td class="align-middle" style="width: 10%">{{category.id}}</td>
+              <td class="w-25 align-middle font-weight-bold">{{category.title}}</td>
+              <td class="w-25 align-middle">
+                <p *ngFor="let film of listCategory[i].films">{{film.title}}</p>
+              </td>
+              <td class="text-right">
+                <div class="btn-group">
+                  <button class="btn btn-primary" title="Sửa tiêu đề" (click)=btnEdit(category.id) data-toggle="modal" data-target="#myModal">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button class="btn btn-danger" title="Xóa" (click)="confirmDel(category.id, category.title)">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <header class="head-form mb-0">
+        <h3 class="m-4" id="header-title">Thêm thể loại phim</h3>
+      </header>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="input-group px-2 mb-3" *ngIf="checkEdit">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-pen-nib"></i></span>
+              </div>
+              <input type="text" class="form-control" value={{idCategory}} disabled>
+            </div>
+            <div class="input-group px-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-pen-nib"></i></span>
+              </div>
+              <input type="text" [(ngModel)]="titleCategory" name="title" class="form-control" placeholder="Tiêu đề">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)=addOrUpdate()>{{checkEdit ? "Sửa" : "Thêm"}}</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
